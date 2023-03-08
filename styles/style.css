@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap');
+
+
+:root{
+    --bright-orange: hsl(31, 77%, 52%);
+    --dark-cyan: hsl(184, 100%, 22%);
+    --v-dark-cyan: hsl(179, 100%, 13%);
+    --trans-white: hsla(0, 0%, 100%, 0.75);
+    --v-light-grey: hsl(0, 0%, 95%);
+    --header-font: 'Big Shoulders Display', cursive;
+    --body-font: 'Lexend Deca', sans-serif;
+}
+
+html{
+    font-size: 15px;
+}
+
+body{
+    box-sizing: border-box !important;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0;
+    background-color: var(--trans-white);
+}
+
+.preview-component{
+    margin: 2rem 1rem;
+    max-width: 325px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.card{
+    padding: 3rem;
+}
+
+.tier-name{
+    font-family: var(--header-font);
+    text-transform: uppercase;
+    font-size: 2.5rem;
+    color: var(--v-light-grey);
+}
+
+.tier-description{
+    font-family: var(--body-font);
+    font-weight: 400;
+    line-height: 1.75rem;
+    color: var(--trans-white);
+}
+
+.card.sedans{
+    background-color: var(--bright-orange);
+}
+
+.card.sedans .learn-more-btn{
+    color: var(--bright-orange);
+}
+
+.card.suvs{
+    background-color: var(--dark-cyan);
+}
+
+.card.suvs .learn-more-btn{
+    color: var(--dark-cyan);
+}
+
+.card.luxury{
+    background-color: var(--v-dark-cyan);
+}
+
+.card.luxury .learn-more-btn{
+    color: var(--v-dark-cyan);
+}
+
+
+
+.learn-more-btn{
+    padding: 1rem 2rem;
+    border-radius: 2rem;
+    border: none;
+    font-size: 1rem;
+    margin-top: 2.5rem;
+    font-weight: 600;
+    transition: 0.25s;
+}
+
+.learn-more-btn:hover{
+    background-color: transparent;
+    color: var(--v-light-grey) !important; 
+    border: 1px solid var(--v-light-grey);
+    padding: calc(1rem - 1px) calc(2rem - 1px);
+}
+
+@media screen and (min-width: 768px) {
+
+    .preview-component{
+        flex-direction: row;
+        min-width: clamp(800px, 60%, 900px);
+    }
+
+    .learn-more-btn{
+        margin-top: 3.5rem;
+    }
+}
